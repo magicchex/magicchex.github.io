@@ -3,9 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello!</title>
+    <title>Home</title>
+    <style>
+        :root {
+        --fill-color: black;
+        --text-color: white;
+        --highlight-color: deepskyblue;
+        }
+        body {
+            background-color: var(--fill-color);
+            color: var(--text-color);
+        }
+        a:hover {
+            color: var(--highlight-color);
+        }
+    </style>
 </head>
 <body>
-    
+    <button id="theme" onclick="toggleTheme()">Dark Mode</button>
+    <p>Hello, I am Chee Vang.</p>
+
+
+    <script>
+        function toggleTheme() {
+            const theme = document.querySelector('#theme')
+            const root = document.querySelector(':root')
+            if (theme.textContent == "Dark Mode") {
+                theme.textContent = "Light Mode"
+                root.style.setProperty('--fill-color', 'white')
+                root.style.setProperty('--text-color', 'black')
+                //root.style.setProperty('--highlight-color', 'white')
+                return
+            }
+            theme.textContent = "Dark Mode"
+            root.style.setProperty('--fill-color', 'black')
+            root.style.setProperty('--text-color', 'white')
+        };
+
+    </script>
 </body>
 </html>
